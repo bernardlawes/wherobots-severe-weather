@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Severe Weather Infrastructure Exposure Explorer</title>
+
+    <link
+        href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <header class="topbar">
+        <div>
+            <div class="eyebrow">WHEROBOTS PROOF OF CONCEPT</div>
+            <h1>Severe Weather Infrastructure Exposure Explorer</h1>
+            <p>
+                Power infrastructure exposed to an observed tornado warning
+                southwest of Atlanta, Georgia.
+            </p>
+        </div>
+
+        <div class="event-badge">
+            <span class="event-dot"></span>
+            Observed Tornado
+        </div>
+    </header>
+
+
+    <main class="workspace">
+
+        <section class="map-panel">
+
+            <div id="map"></div>
+
+            <div class="map-legend">
+                <div class="legend-title">Map Layers</div>
+
+                <label>
+                    <input type="checkbox" id="toggle-warning" checked>
+                    <span class="legend-swatch warning"></span>
+                    Tornado Warning
+                </label>
+
+                <label>
+                    <input type="checkbox" id="toggle-lines" checked>
+                    <span class="legend-line"></span>
+                    Power Lines
+                </label>
+
+                <label>
+                    <input type="checkbox" id="toggle-substations" checked>
+                    <span class="legend-dot substation"></span>
+                    Substations
+                </label>
+            </div>
+
+        </section>
+
+
+        <aside class="sidebar">
+
+            <section class="card">
+                <div class="card-label">Selected Event</div>
+
+                <h2>Observed Tornado</h2>
+
+                <div class="event-meta">
+                    <div>
+                        <span>Warning ID</span>
+                        <strong id="warning-id">-</strong>
+                    </div>
+                    <div>
+                        <span>Issued</span>
+                        <strong>Jan 10, 2026 · 4:00 PM</strong>
+                    </div>
+
+                    <div>
+                        <span>Expired</span>
+                        <strong>Jan 10, 2026 · 4:15 PM</strong>
+                    </div>
+
+                    <div>
+                        <span>Emergency</span>
+                        <strong>No</strong>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="metrics">
+
+                <div class="metric-card primary">
+                    <span>Exposed Grid Assets</span>
+                    <strong>153</strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>Power Lines</span>
+                    <strong>124</strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>Substations</span>
+                    <strong>29</strong>
+                </div>
+
+            </section>
+
+
+            <section class="card asset-card">
+                <div class="card-label">Asset Inspector</div>
+
+                <div id="asset-inspector-empty">
+                    Click an exposed asset on the map to inspect it.
+                </div>
+
+                <div id="asset-inspector" class="hidden">
+
+                    <div class="asset-type" id="asset-type"></div>
+
+                    <div class="asset-row">
+                        <span>Name</span>
+                        <strong id="asset-name"></strong>
+                    </div>
+
+                    <div class="asset-row">
+                        <span>Asset ID</span>
+                        <strong id="asset-id"></strong>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="provenance">
+                <span>Analysis</span>
+                Wherobots · Apache Sedona
+
+                <span>Data</span>
+                NOAA National Weather Service · Overture Maps
+
+                <span>Output</span>
+                Managed Havasu / Iceberg
+            </section>
+
+        </aside>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

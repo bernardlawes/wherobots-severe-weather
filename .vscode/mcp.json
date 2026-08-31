@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"Wherobots": {
+			"url": "https://api.cloud.wherobots.com/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
