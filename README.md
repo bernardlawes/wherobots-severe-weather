@@ -49,6 +49,12 @@ The analysis job accepts:
 - `--asset-classes` — infrastructure classes to analyze
 - `--output-table` — managed output table
 
+## Presentation
+
+The project presentation is available at:
+
+[`docs/wherobots_severe_weather_exposure.pdf`](docs/wherobots_severe_weather_exposure.pdf)
+
 Example:
 
 ```text
