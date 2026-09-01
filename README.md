@@ -51,7 +51,7 @@ The analysis job accepts:
 
 ## Presentation
 
-The project presentation is available at:
+The project presentation is available in the docs folder:
 
 [`docs/wherobots_severe_weather_exposure.pdf`](docs/wherobots_severe_weather_exposure.pdf)
 
